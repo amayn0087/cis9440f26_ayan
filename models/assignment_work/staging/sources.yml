@@ -10,8 +10,6 @@ sources:
           NYC 311 service requests for Dept of Transportation.
           One row per service request.
 
-version: 3
-sources_dob:
   - name: raw
     description: Raw data loaded from NYC Open Data
     database: ayan-cis9440-baruch
@@ -19,5 +17,5 @@ sources_dob:
     tables:
       - name: source_nyc_dob_job_apps
         description: |
-          List of most job filings filed in DOB NOW.
+          List of most job filings filed in DOB now.
           One row per job filing.
