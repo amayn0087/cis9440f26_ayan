@@ -22,7 +22,7 @@ cleaned AS (
             job_type,
             building_type,
             applicant_first_name,
-            applicant_middle_initial,
+            applicants_middle_initial,
             applicant_last_name,
             applicant_professional_title,
             applicant_license,
