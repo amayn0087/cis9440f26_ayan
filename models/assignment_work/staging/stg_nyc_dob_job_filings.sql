@@ -137,25 +137,81 @@ cleaned AS (
        CAST(filing_representative_zip AS STRING) AS filing_representative_zip,
 
        -- Work Type Details
-       CAST(sprinkler_work_type AS BOOLEAN) AS sprinkler_work_type,
-       CAST(plumbing_work_type AS BOOLEAN) AS plumbing_work_type,
-       CAST(boiler_equipment_work_type_ AS BOOLEAN) AS boiler_equipment_work_type_,
-       CAST(standpipe AS BOOLEAN) AS standpipe,
-       CAST(antenna AS BOOLEAN) AS antenna,
-       CAST(curb_cut AS BOOLEAN) AS curb_cut,
-       CAST(sign AS BOOLEAN) AS sign,
-       CAST(fence AS BOOLEAN) AS fence,
-       CAST(scaffold AS BOOLEAN) AS scaffold,
-       CAST(shed AS BOOLEAN) AS shed,
-       CAST(earth_work_work_type_ AS BOOLEAN) AS earth_work_work_type_,
-       CAST(foundation_work_type_ AS BOOLEAN) AS foundation_work_type_,
-       CAST(general_construction_work_type_ AS BOOLEAN) AS general_construction_work_type_,
-       CAST(mechanical_systems_work_type_ AS BOOLEAN) AS mechanical_systems_work_type_,
-       CAST(place_of_assembly_work_type_ AS BOOLEAN) AS place_of_assembly_work_type_,
-       CAST(structural_work_type_ AS BOOLEAN) AS structural_work_type_,
-       CAST(support_of_excavation_work_type_ AS BOOLEAN) AS support_of_excavation_work_type_,
-       CAST(sidewalk_shed_work_type_ AS BOOLEAN) AS sidewalk_shed_work_type_,
-       CAST(temporary_place_of_assembly_work_type_ AS BOOLEAN) AS temporary_place_of_assembly_work_type_,
+        CASE WHEN UPPER(TRIM(CAST(sprinkler_work_type AS STRING))) IN ('YES', 'Y', 'TRUE', '1') THEN TRUE 
+             WHEN UPPER(TRIM(CAST(sprinkler_work_type AS STRING))) IN ('NO', 'N', 'FALSE', '0') THEN FALSE 
+             ELSE NULL END AS sprinkler_work_type,
+
+        CASE WHEN UPPER(TRIM(CAST(plumbing_work_type AS STRING))) IN ('YES', 'Y', 'TRUE', '1') THEN TRUE 
+             WHEN UPPER(TRIM(CAST(plumbing_work_type AS STRING))) IN ('NO', 'N', 'FALSE', '0') THEN FALSE 
+             ELSE NULL END AS plumbing_work_type,
+
+        CASE WHEN UPPER(TRIM(CAST(boiler_equipment_work_type_ AS STRING))) IN ('YES', 'Y', 'TRUE', '1') THEN TRUE 
+             WHEN UPPER(TRIM(CAST(boiler_equipment_work_type_ AS STRING))) IN ('NO', 'N', 'FALSE', '0') THEN FALSE 
+             ELSE NULL END AS boiler_equipment_work_type_,
+
+        CASE WHEN UPPER(TRIM(CAST(standpipe AS STRING))) IN ('YES', 'Y', 'TRUE', '1') THEN TRUE 
+             WHEN UPPER(TRIM(CAST(standpipe AS STRING))) IN ('NO', 'N', 'FALSE', '0') THEN FALSE 
+             ELSE NULL END AS standpipe,
+
+        CASE WHEN UPPER(TRIM(CAST(antenna AS STRING))) IN ('YES', 'Y', 'TRUE', '1') THEN TRUE 
+             WHEN UPPER(TRIM(CAST(antenna AS STRING))) IN ('NO', 'N', 'FALSE', '0') THEN FALSE 
+             ELSE NULL END AS antenna,
+
+        CASE WHEN UPPER(TRIM(CAST(curb_cut AS STRING))) IN ('YES', 'Y', 'TRUE', '1') THEN TRUE 
+             WHEN UPPER(TRIM(CAST(curb_cut AS STRING))) IN ('NO', 'N', 'FALSE', '0') THEN FALSE 
+             ELSE NULL END AS curb_cut,
+
+        CASE WHEN UPPER(TRIM(CAST(sign AS STRING))) IN ('YES', 'Y', 'TRUE', '1') THEN TRUE 
+             WHEN UPPER(TRIM(CAST(sign AS STRING))) IN ('NO', 'N', 'FALSE', '0') THEN FALSE 
+             ELSE NULL END AS sign,
+
+        CASE WHEN UPPER(TRIM(CAST(fence AS STRING))) IN ('YES', 'Y', 'TRUE', '1') THEN TRUE 
+             WHEN UPPER(TRIM(CAST(fence AS STRING))) IN ('NO', 'N', 'FALSE', '0') THEN FALSE 
+             ELSE NULL END AS fence,
+
+        CASE WHEN UPPER(TRIM(CAST(scaffold AS STRING))) IN ('YES', 'Y', 'TRUE', '1') THEN TRUE 
+             WHEN UPPER(TRIM(CAST(scaffold AS STRING))) IN ('NO', 'N', 'FALSE', '0') THEN FALSE 
+             ELSE NULL END AS scaffold,
+
+        CASE WHEN UPPER(TRIM(CAST(shed AS STRING))) IN ('YES', 'Y', 'TRUE', '1') THEN TRUE 
+             WHEN UPPER(TRIM(CAST(shed AS STRING))) IN ('NO', 'N', 'FALSE', '0') THEN FALSE 
+             ELSE NULL END AS shed,
+
+        CASE WHEN UPPER(TRIM(CAST(earth_work_work_type_ AS STRING))) IN ('YES', 'Y', 'TRUE', '1') THEN TRUE 
+             WHEN UPPER(TRIM(CAST(earth_work_work_type_ AS STRING))) IN ('NO', 'N', 'FALSE', '0') THEN FALSE 
+             ELSE NULL END AS earth_work_work_type,
+
+        CASE WHEN UPPER(TRIM(CAST(foundation_work_type_ AS STRING))) IN ('YES', 'Y', 'TRUE', '1') THEN TRUE 
+             WHEN UPPER(TRIM(CAST(foundation_work_type_ AS STRING))) IN ('NO', 'N', 'FALSE', '0') THEN FALSE 
+             ELSE NULL END AS foundation_work_type,
+
+        CASE WHEN UPPER(TRIM(CAST(general_construction_work_type_ AS STRING))) IN ('YES', 'Y', 'TRUE', '1') THEN TRUE 
+             WHEN UPPER(TRIM(CAST(general_construction_work_type_ AS STRING))) IN ('NO', 'N', 'FALSE', '0') THEN FALSE 
+             ELSE NULL END AS general_construction_work_type,
+
+        CASE WHEN UPPER(TRIM(CAST(mechanical_systems_work_type_ AS STRING))) IN ('YES', 'Y', 'TRUE', '1') THEN TRUE 
+             WHEN UPPER(TRIM(CAST(mechanical_systems_work_type_ AS STRING))) IN ('NO', 'N', 'FALSE', '0') THEN FALSE 
+             ELSE NULL END AS mechanical_systems_work_type,
+
+        CASE WHEN UPPER(TRIM(CAST(place_of_assembly_work_type_ AS STRING))) IN ('YES', 'Y', 'TRUE', '1') THEN TRUE 
+             WHEN UPPER(TRIM(CAST(place_of_assembly_work_type_ AS STRING))) IN ('NO', 'N', 'FALSE', '0') THEN FALSE 
+             ELSE NULL END AS place_of_assembly_work_type,
+
+        CASE WHEN UPPER(TRIM(CAST(structural_work_type_ AS STRING))) IN ('YES', 'Y', 'TRUE', '1') THEN TRUE 
+             WHEN UPPER(TRIM(CAST(structural_work_type_ AS STRING))) IN ('NO', 'N', 'FALSE', '0') THEN FALSE 
+             ELSE NULL END AS structural_work_type,
+
+        CASE WHEN UPPER(TRIM(CAST(support_of_excavation_work_type_ AS STRING))) IN ('YES', 'Y', 'TRUE', '1') THEN TRUE 
+             WHEN UPPER(TRIM(CAST(support_of_excavation_work_type_ AS STRING))) IN ('NO', 'N', 'FALSE', '0') THEN FALSE 
+             ELSE NULL END AS support_of_excavation_work_type,
+
+        CASE WHEN UPPER(TRIM(CAST(sidewalk_shed_work_type_ AS STRING))) IN ('YES', 'Y', 'TRUE', '1') THEN TRUE 
+             WHEN UPPER(TRIM(CAST(sidewalk_shed_work_type_ AS STRING))) IN ('NO', 'N', 'FALSE', '0') THEN FALSE 
+             ELSE NULL END AS sidewalk_shed_work_type,
+
+        CASE WHEN UPPER(TRIM(CAST(temporary_place_of_assembly_work_type_ AS STRING))) IN ('YES', 'Y', 'TRUE', '1') THEN TRUE 
+             WHEN UPPER(TRIM(CAST(temporary_place_of_assembly_work_type_ AS STRING))) IN ('NO', 'N', 'FALSE', '0') THEN FALSE 
+             ELSE NULL END AS temporary_place_of_assembly_work_type,
 
        -- High Cardinality Details
        CAST(initial_cost AS DECIMAL) AS initial_cost,
