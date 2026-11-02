@@ -116,7 +116,7 @@ cleaned AS (
 
        -- Applicant Details
        CAST(applicant_first_name AS STRING) AS applicant_first_name,
-       CAST(applicant_middle_initial AS STRING) AS applicant_middle_initial,
+       CAST(applicants_middle_initial AS STRING) AS applicant_middle_initial,
        CAST(applicant_last_name AS STRING) AS applicant_last_name,
        CAST(applicant_professional_title AS STRING) AS applicant_professional_title,
        CAST(applicant_license AS STRING) AS applicant_license,
